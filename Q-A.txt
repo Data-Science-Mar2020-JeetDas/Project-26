@@ -1,0 +1,33 @@
+
+# -*- coding: utf-8 -*-
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import random
+import pandas
+
+
+df = pd.read_csv("C:/Users/Jeet Das/Desktop/Project-26.csv",encoding="utf-8")
+
+print("\n----------------------- output data :---------------------\n")
+print("Project-26 : Probability of dying by age 5 per 1000 live birth [By WHO]");
+print("\n------------------------------------------------------------\n")
+
+
+# Question – A : get row and column numbers 
+
+print('---------------------------------------------')
+print("Dimension of the data frame = ",df.shape)
+print('---------------------------------------------')
+
+
+----------------------- output data :---------------------
+
+Project-26 : Probability of dying by age 5 per 1000 live birth [By WHO]
+
+------------------------------------------------------------
+
+---------------------------------------------
+Dimension of the data frame =  (29285, 4)
+---------------------------------------------
+
