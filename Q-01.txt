@@ -1,0 +1,187 @@
+
+#***************[ Question-01 : Creating India data  ]********************
+
+# Number of infant deaths (thousands) 
+# Number of neonatal deaths (thousands) 
+# Number of under-five deaths (thousands) 
+
+df_india = df[df.Location == 'India']
+
+df1 = df_india[df_india.Indicator == 'Number of infant deaths (thousands)']
+df2 = df_india[df_india.Indicator == 'Number of neonatal deaths (thousands)']
+df3 = df_india[df_india.Indicator == 'Number of under-five deaths (thousands)']
+
+print("-----------[ Output-A : Number of infant deaths (thousands) ]---------")
+print(df1[['Location','Period','First Tooltip']])
+
+print("-----------[ Output-B : Number of neonatal deaths (thousands) ]---------")
+print(df2[['Location','Period','First Tooltip']])
+
+print("-----------[ Output-C : Number of under-five deaths (thousands) ]---------")
+print(df3[['Location','Period','First Tooltip']])
+
+plt.title('Question - 01 : India ')
+
+plt.xlabel("Years --- >")
+plt.ylabel("Number(thousands) --- >")
+
+plt.plot(df1['Period'],df1['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Number of infant deaths (thousands)")
+
+plt.plot(df2['Period'],df2['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Number of neonatal deaths (thousands)")
+
+plt.plot(df3['Period'],df3['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Number of under-five deaths (thousands)")
+
+plt.legend()
+plt.show()
+-----------[ Output-A : Number of infant deaths (thousands) ]---------
+      Location  Period  First Tooltip
+11625    India    2018         342800
+11628    India    2017         362607
+11631    India    2016         384510
+11634    India    2015         408820
+11637    India    2014         435954
+11640    India    2013         465723
+11643    India    2012        1031595
+11646    India    2011        1101251
+11649    India    2010        1174810
+11652    India    2009        1249875
+11655    India    2008        1324055
+11658    India    2007        1395431
+11661    India    2006        1463551
+11664    India    2005        1528625
+11667    India    2004        1591019
+11670    India    2003        1652457
+11673    India    2002        1713687
+11676    India    2001        1775576
+11679    India    2000        1837813
+11682    India    1999        1001666
+11685    India    1998        1031592
+11688    India    1997        1065125
+11691    India    1996        1099012
+11694    India    1995        1001399
+11697    India    1994        1023558
+11700    India    1993        1044865
+11703    India    1992        1066894
+11706    India    1991        1090490
+11709    India    1990        1115794
+11712    India    1989        1143578
+11715    India    1988        1170545
+11718    India    1987        1197853
+11721    India    1986        1219265
+11724    India    1985        1237971
+11727    India    1984        1255635
+11730    India    1983        1272061
+11733    India    1982        1289662
+11736    India    1981        1306579
+11739    India    1980        1323340
+11742    India    1979        1339760
+11745    India    1978        1355875
+11748    India    1977        1372915
+11751    India    1976        1390718
+11754    India    1975        1406998
+-----------[ Output-B : Number of neonatal deaths (thousands) ]---------
+      Location  Period  First Tooltip
+11626    India    2018         549227
+11629    India    2017         574611
+11632    India    2016         602279
+11635    India    2015         632689
+11638    India    2014         665563
+11641    India    2013         702444
+11644    India    2012         742530
+11647    India    2011         785672
+11650    India    2010         830397
+11653    India    2009         876272
+11656    India    2008         921398
+11659    India    2007         965814
+11662    India    2006        1008365
+11665    India    2005        1049521
+11668    India    2004        1090065
+11671    India    2003        1131366
+11674    India    2002        1172745
+11677    India    2001        1214413
+11680    India    2000        1254264
+11683    India    1999        1292168
+11686    India    1998        1328267
+11689    India    1997        1363426
+11692    India    1996        1395618
+11695    India    1995        1425290
+11698    India    1994        1453821
+11701    India    1993        1483087
+11704    India    1992        1513517
+11707    India    1991        1545511
+11710    India    1990        1577958
+11713    India    1989        1611296
+11716    India    1988        1645155
+11719    India    1987        1679188
+11722    India    1986        1712139
+11725    India    1985        1740552
+11728    India    1984        1764851
+11731    India    1983        1785944
+11734    India    1982        1803040
+11737    India    1981        1817003
+11740    India    1980        1827197
+11743    India    1979        1836497
+11746    India    1978        1846294
+11749    India    1977        1855952
+11752    India    1976        1865665
+11755    India    1975        1871305
+-----------[ Output-C : Number of under-five deaths (thousands) ]---------
+      Location  Period  First Tooltip
+11624    India    2018         429525
+11627    India    2017         457607
+11630    India    2016         490232
+11633    India    2015        1067978
+11636    India    2014        1145438
+11639    India    2013        1230858
+11642    India    2012        1324170
+11645    India    2011        1423263
+11648    India    2010        1527782
+11651    India    2009        1634632
+11654    India    2008        1741587
+11657    India    2007        1846257
+11660    India    2006        1947828
+11663    India    2005        1022007
+11666    India    2004        1070449
+11669    India    2003        1115247
+11672    India    2002        1164519
+11675    India    2001        1215005
+11678    India    2000        1262246
+11681    India    1999        1307636
+11684    India    1998        1359958
+11687    India    1997        1406015
+11690    India    1996        1448234
+11693    India    1995        1490541
+11696    India    1994        1529831
+11699    India    1993        1567586
+11702    India    1992        1605879
+11705    India    1991        1645899
+11708    India    1990        1687908
+11711    India    1989        1733091
+11714    India    1988        1777581
+11717    India    1987        1821642
+11720    India    1986        1857984
+11723    India    1985        1889921
+11726    India    1984        1919867
+11729    India    1983        1947731
+11732    India    1982        1976798
+11735    India    1981        2007084
+11738    India    1980        2039182
+11741    India    1979        2073054
+11744    India    1978        2105761
+11747    India    1977        2136789
+11750    India    1976        2167539
+11753    India    1975        2195546
+
+In [66]:
