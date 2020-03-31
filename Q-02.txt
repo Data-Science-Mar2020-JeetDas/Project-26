@@ -1,0 +1,242 @@
+#***************[ Question-02 : Creating Bangladesh data  ]********************
+
+# Number of infant deaths (thousands) 
+# Number of neonatal deaths (thousands) 
+# Number of under-five deaths (thousands) 
+
+df_Bangladesh = df[df.Location == 'Bangladesh']
+
+df1 = df_Bangladesh[df_Bangladesh.Indicator == 'Number of infant deaths (thousands)']
+df2 = df_Bangladesh[df_Bangladesh.Indicator == 'Number of neonatal deaths (thousands)']
+df3 = df_Bangladesh[df_Bangladesh.Indicator == 'Number of under-five deaths (thousands)']
+
+print("-----------[ Output-A : Number of infant deaths (thousands) ]---------")
+print(df1[['Location','Period','First Tooltip']])
+
+print("-----------[ Output-B : Number of neonatal deaths (thousands) ]---------")
+print(df2[['Location','Period','First Tooltip']])
+
+print("-----------[ Output-C : Number of under-five deaths (thousands) ]---------")
+print(df3[['Location','Period','First Tooltip']])
+
+plt.title('Question - 02 : Bangladesh ')
+
+plt.xlabel("Years --- >")
+plt.ylabel("Number(thousands) --- >")
+
+plt.plot(df1['Period'],df1['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] Number of infant deaths (thousands)")
+
+plt.plot(df2['Period'],df2['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] Number of neonatal deaths (thousands)")
+
+plt.plot(df3['Period'],df3['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] Number of under-five deaths (thousands)")
+
+plt.legend()
+plt.show()
+
+-----------[ Output-A : Number of infant deaths (thousands) ]---------
+        Location  Period  First Tooltip
+1762  Bangladesh    2018          33327
+1765  Bangladesh    2017          35395
+1768  Bangladesh    2016          37755
+1771  Bangladesh    2015          40220
+1774  Bangladesh    2014          42805
+1777  Bangladesh    2013         100148
+1780  Bangladesh    2012         106605
+1783  Bangladesh    2011         113581
+1786  Bangladesh    2010         121124
+1789  Bangladesh    2009         129286
+1792  Bangladesh    2008         138058
+1795  Bangladesh    2007         147449
+1798  Bangladesh    2006         157411
+1801  Bangladesh    2005         167598
+1804  Bangladesh    2004         178063
+1807  Bangladesh    2003         102883
+1810  Bangladesh    2002         108839
+1813  Bangladesh    2001         114904
+1816  Bangladesh    2000         101044
+1819  Bangladesh    1999         106309
+1822  Bangladesh    1998         111689
+1825  Bangladesh    1997         117258
+1828  Bangladesh    1996         122907
+1831  Bangladesh    1995         129002
+1834  Bangladesh    1994         135153
+1837  Bangladesh    1993         141372
+1840  Bangladesh    1992         147706
+1843  Bangladesh    1991         153988
+1846  Bangladesh    1990         160400
+1849  Bangladesh    1989         166533
+         ...     ...            ...
+1876  Bangladesh    1980         203045
+1879  Bangladesh    1979         204163
+1882  Bangladesh    1978         204772
+1885  Bangladesh    1977         205097
+1888  Bangladesh    1976         205081
+1891  Bangladesh    1975         204337
+1894  Bangladesh    1974         203395
+1897  Bangladesh    1973         201917
+1900  Bangladesh    1972         200009
+1903  Bangladesh    1971         197572
+1906  Bangladesh    1970         194896
+1909  Bangladesh    1969         192005
+1912  Bangladesh    1968         189222
+1915  Bangladesh    1967         186602
+1918  Bangladesh    1966         184135
+1921  Bangladesh    1965         181863
+1924  Bangladesh    1964         179914
+1927  Bangladesh    1963         178298
+1930  Bangladesh    1962         176972
+1933  Bangladesh    1961         175724
+1936  Bangladesh    1960         174837
+1939  Bangladesh    1959         174111
+1942  Bangladesh    1958         173546
+1945  Bangladesh    1957         173042
+1948  Bangladesh    1956         172399
+1951  Bangladesh    1955         171876
+1953  Bangladesh    1954         171184
+1955  Bangladesh    1953         170531
+1957  Bangladesh    1952         169879
+1958  Bangladesh    1951         170511
+
+[68 rows x 3 columns]
+-----------[ Output-B : Number of neonatal deaths (thousands) ]---------
+        Location  Period  First Tooltip
+1763  Bangladesh    2018          50244
+1766  Bangladesh    2017          53785
+1769  Bangladesh    2016          57787
+1772  Bangladesh    2015          62219
+1775  Bangladesh    2014          66316
+1778  Bangladesh    2013          70466
+1781  Bangladesh    2012          75011
+1784  Bangladesh    2011          80003
+1787  Bangladesh    2010          85434
+1790  Bangladesh    2009          91271
+1793  Bangladesh    2008          97316
+1796  Bangladesh    2007         103407
+1799  Bangladesh    2006         109678
+1802  Bangladesh    2005         116032
+1805  Bangladesh    2004         122491
+1808  Bangladesh    2003         128974
+1811  Bangladesh    2002         135510
+1814  Bangladesh    2001         142012
+1817  Bangladesh    2000         148651
+1820  Bangladesh    1999         155407
+1823  Bangladesh    1998         162409
+1826  Bangladesh    1997         169861
+1829  Bangladesh    1996         177739
+1832  Bangladesh    1995         186214
+1835  Bangladesh    1994         195095
+1838  Bangladesh    1993         204312
+1841  Bangladesh    1992         213655
+1844  Bangladesh    1991         222888
+1847  Bangladesh    1990         231802
+1850  Bangladesh    1989         240383
+         ...     ...            ...
+1871  Bangladesh    1982         290016
+1874  Bangladesh    1981         294922
+1877  Bangladesh    1980         297982
+1880  Bangladesh    1979         299697
+1883  Bangladesh    1978         300286
+1886  Bangladesh    1977         300039
+1889  Bangladesh    1976         299035
+1892  Bangladesh    1975         297439
+1895  Bangladesh    1974         295487
+1898  Bangladesh    1973         292712
+1901  Bangladesh    1972         289672
+1904  Bangladesh    1971         285995
+1907  Bangladesh    1970         281860
+1910  Bangladesh    1969         276920
+1913  Bangladesh    1968         271824
+1916  Bangladesh    1967         266424
+1919  Bangladesh    1966         261338
+1922  Bangladesh    1965         256821
+1925  Bangladesh    1964         252724
+1928  Bangladesh    1963         248548
+1931  Bangladesh    1962         244847
+1934  Bangladesh    1961         241245
+1937  Bangladesh    1960         237888
+1940  Bangladesh    1959         234647
+1943  Bangladesh    1958         231409
+1946  Bangladesh    1957         228027
+1949  Bangladesh    1956         224922
+1952  Bangladesh    1955         221771
+1954  Bangladesh    1954         218697
+1956  Bangladesh    1953         215256
+
+[66 rows x 3 columns]
+-----------[ Output-C : Number of under-five deaths (thousands) ]---------
+        Location  Period  First Tooltip
+1761  Bangladesh    2018          40181
+1764  Bangladesh    2017          42956
+1767  Bangladesh    2016         101118
+1770  Bangladesh    2015         108286
+1773  Bangladesh    2014         116029
+1776  Bangladesh    2013         124405
+1779  Bangladesh    2012         133463
+1782  Bangladesh    2011         143328
+1785  Bangladesh    2010         154083
+1788  Bangladesh    2009         165771
+1791  Bangladesh    2008         178387
+1794  Bangladesh    2007         103170
+1797  Bangladesh    2006         110784
+1800  Bangladesh    2005         102845
+1803  Bangladesh    2004         110310
+1806  Bangladesh    2003         118106
+1809  Bangladesh    2002         126020
+1812  Bangladesh    2001         134382
+1815  Bangladesh    2000         142833
+1818  Bangladesh    1999         151617
+1821  Bangladesh    1998         160740
+1824  Bangladesh    1997         170147
+1827  Bangladesh    1996         179927
+1830  Bangladesh    1995         190222
+1833  Bangladesh    1994         200784
+1836  Bangladesh    1993         211593
+1839  Bangladesh    1992         222518
+1842  Bangladesh    1991         233280
+1845  Bangladesh    1990         244122
+1848  Bangladesh    1989         254686
+         ...     ...            ...
+1863  Bangladesh    1984         299706
+1866  Bangladesh    1983         305690
+1869  Bangladesh    1982         310433
+1872  Bangladesh    1981         314293
+1875  Bangladesh    1980         317243
+1878  Bangladesh    1979         319763
+1881  Bangladesh    1978         321704
+1884  Bangladesh    1977         322981
+1887  Bangladesh    1976         323580
+1890  Bangladesh    1975         322945
+1893  Bangladesh    1974         321508
+1896  Bangladesh    1973         318995
+1899  Bangladesh    1972         315605
+1902  Bangladesh    1971         311230
+1905  Bangladesh    1970         306401
+1908  Bangladesh    1969         301199
+1911  Bangladesh    1968         296128
+1914  Bangladesh    1967         291302
+1917  Bangladesh    1966         286877
+1920  Bangladesh    1965         282934
+1923  Bangladesh    1964         279538
+1926  Bangladesh    1963         276955
+1929  Bangladesh    1962         274610
+1932  Bangladesh    1961         272648
+1935  Bangladesh    1960         270997
+1938  Bangladesh    1959         269572
+1941  Bangladesh    1958         268347
+1944  Bangladesh    1957         267110
+1947  Bangladesh    1956         265760
+1950  Bangladesh    1955         264701
+
+[64 rows x 3 columns]
